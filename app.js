@@ -7,9 +7,29 @@ weatherApp.value('ngRoute', 'ngRoute');
 weatherApp.value('ngResource', 'ngResource');
 
 
-weatherApp.controller('homeController', ['$scope', function ($scope) { }]);
 
-weatherApp.controller('forecastController', ['$scope', function ($scope) { }]);
+
+weatherApp.service('cityService', function(){
+
+this.city = 'New York, NY';
+
+$scope.watch('city',function(){
+    cityService.city = $scope.city;
+});
+
+});
+
+weatherApp.controller('homeController', ['$scope', 'cityService',function ($scope,cityService) { 
+
+$scope.city = cityService.city;
+
+}]);
+
+weatherApp.controller('forecastController', ['$scope','cityService', function ($scope,cityService)
+ { 
+
+    $scope.city = cityService.city; 
+ }]);
 
 
 
@@ -22,7 +42,7 @@ weatherApp.config(function ($routeProvider) {
             controller: 'homeController'
           })
         .when('/forecast', {
-            templateUrl: 'forecast.html',
+            templateUrl: 'pages/forecast.html',
             controller: 'forecastController'
 
         })
