@@ -27,7 +27,7 @@ $scope.$watch('city',function(){
 
 }]);
 
-weatherApp.controller('forecastController', ['$scope','cityService', function ($scope,cityService)
+weatherApp.controller('forecastController', ['$scope','$resource','cityService', function ($scope,$resource,cityService)
  { 
 
     $scope.city = cityService.city; 
