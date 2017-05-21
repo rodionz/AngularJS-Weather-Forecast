@@ -11,7 +11,7 @@ weatherApp.value('ngResource', 'ngResource');
 
 weatherApp.service('cityService', function(){
 
-this.city = 'New York, NY';
+this.city = 'Jerusalem';
 
 
 
