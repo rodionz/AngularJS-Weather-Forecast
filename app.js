@@ -58,9 +58,9 @@ weatherApp.directive("weatherReport", function () {
         templateUrl: "directives/weatherReport.html",
         replace: true,
         scope: {
-            weatherDay = "=",
-            convertDate = "&",
-            dateFormat = "@"
+            weatherDay : "=",
+            convertDate : "&",
+            dateFormat : "@"
 
         }
 

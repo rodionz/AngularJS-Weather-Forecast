@@ -1,13 +1,16 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ weatherDay.dt | date: dateFormat  }}</h3>
-    </div>
+    <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{converttoDate( weatherDay.dt ) | date: dateFormat  }}</h3>
+                </div>
+                <div class="panel-body">
 
-    <div class="panel-body">
+                    Daytime Temperature : {{weatherDay.main.temp}}&deg;C
+                    <br>                   
+                    Prec : {{weatherDay.weather[0].main}}
+                    <br>
+                    Humidity : {{ weatherDay.main.humidity}}&#37
 
-        Daytime Temperature : {{w.main.temp}}
+                </div>
+            </div>
 
-    </div>
 
-
-</div>
