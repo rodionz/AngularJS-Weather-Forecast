@@ -43,7 +43,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
     });
 
 
-    $scope.converttoDate = function (dt) {
+    $scope.convertToDate = function (dt) {
         return new Date(dt * 1000);
     }
 
@@ -59,7 +59,7 @@ weatherApp.directive("weatherReport", function () {
         replace: true,
         scope: {
             weatherDay : "=",
-            convertDate : "&",
+            convertToDate : "&",
             dateFormat : "@"
 
         }
